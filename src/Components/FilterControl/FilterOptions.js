@@ -5,24 +5,12 @@ export const FilterOptions = (props) => {
   return (
     <FormGroup className={props.className}>
       <h6>Filter</h6>
-      <Form.Check
+      {props.departments.map((department) => <Form.Check
         type={`checkbox`}
         id={`filter`}
         name={`filter`}
-        label={`default checkbox`}
-      />
-      <Form.Check
-        type={`checkbox`}
-        id={`filter`}
-        name={`filter`}
-        label={`default checkbox`}
-      />
-      <Form.Check
-        type={`checkbox`}
-        id={`filter`}
-        name={`filter`}
-        label={`default checkbox`}
-      />
+        label={department}
+      />)}
     </FormGroup>
   );
 };
