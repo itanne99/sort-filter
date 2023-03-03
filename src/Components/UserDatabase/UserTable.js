@@ -34,7 +34,7 @@ export const UserTable = () => {
             <th>Username</th>
             <th>Email</th>
             <th>Department</th>
-            <th>Birthday</th>
+            <th>D.O.B.</th>
           </tr>
         </thead>
         <tbody>
