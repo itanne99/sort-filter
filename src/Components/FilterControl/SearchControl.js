@@ -5,7 +5,7 @@ export const SearchControl = (props) => {
   return (
     <FormGroup className={props.className}>
       <h6>Search</h6>
-      <Form.Control type="text" />
+      <Form.Control type="text" onChange={(e) => props.setSearch(e.target.value)} />
     </FormGroup>
   );
 };
