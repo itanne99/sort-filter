@@ -24,10 +24,6 @@ export const UserTable = () => {
       .catch((error) => {setError(error)});
   }, []);
 
-  useEffect(() => {
-    console.log(error);
-  }, [error])
-
   return (
     <>
       <Table striped>
