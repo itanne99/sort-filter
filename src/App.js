@@ -11,7 +11,7 @@ const baseURL = "https://api.mockaroo.com/api/a92778b0";
 
 function App() {
   const [filterControl, setFilterControl] = useState({
-    Sort: 0,
+    Sort: 0, // 0 - None, 1/2 - Name (Asc/Dsc), 3/4 - Username (Asc/Dsc), 5/6 - Email (Asc/Dsc), 7/8 - Department (Asc/Dsc), 9/10 - D.O.B (Asc/Dsc)
     Filter: [],
     Search: "",
   });
@@ -23,7 +23,7 @@ function App() {
     axios
       .get(baseURL, {
         params: {
-          count: "25",
+          count: "50",
           key: "db10aca0" /*  */,
         },
       })
@@ -47,13 +47,16 @@ function App() {
   }, [departments])
 
   useEffect(() => {
-    console.log(filterControl);
-  }, [filterControl]);
+    console.log(filterControl.Filter);
+  
+    
+  }, [filterControl.Filter])
+  
 
   return (
     <Container className="mt-4">
       <Stack className="align-items-start" direction={`horizontal`} gap={4}>
-        <UserTable users={users} />
+        <UserTable users={users} filterControl={filterControl} />
         <FilterControl
           departments={departments}
           filterControl={filterControl}
